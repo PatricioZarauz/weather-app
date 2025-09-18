@@ -1,0 +1,53 @@
+@use "@/styles/base/colors" as *;
+
+button {
+  cursor: pointer;
+  &[data-variant="primary"] {
+    padding-inline: 1em;
+    padding-block: 0.75em;
+    border-radius: 0.5em;
+    border-width: 0;
+    color: $neutral_0;
+    position: relative;
+    overflow: hidden;
+
+    // Added transparent background to allow the before and after pseudo classes background to take presedence
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      // allow text to have a higher z-index
+      z-index: -1;
+    }
+
+    // Default state
+    &::before {
+      background-color: $blue_500;
+    }
+
+    // Hover state "wipe-item" config
+    &::after {
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 100ms ease-in;
+      background-color: $blue_700;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    &:focus-visible {
+      outline: 0.07em solid $blue_500;
+      outline-offset: 0.08em;
+    }
+  }
+}
