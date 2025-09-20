@@ -10,6 +10,7 @@ button {
     color: $neutral_0;
     position: relative;
     overflow: hidden;
+    height: fit-content;
 
     // Added transparent background to allow the before and after pseudo classes background to take presedence
     background-color: transparent;
