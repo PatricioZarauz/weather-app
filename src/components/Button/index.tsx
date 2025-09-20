@@ -12,12 +12,7 @@ interface ButtonProps extends NativeButtonProps {
 
 const Button = ({ text, variant = "primary", ...rest }: ButtonProps) => {
   return (
-    <button
-      className={styles.button}
-      data-content={text}
-      data-variant={variant}
-      {...rest}
-    >
+    <button className={styles.button} data-variant={variant} {...rest}>
       {text}
     </button>
   )
