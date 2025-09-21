@@ -5,5 +5,7 @@ div.container {
     margin-inline: auto;
     margin-block: 5rem;
     width: fit-content;
+    display: flex;
+    gap: 1.5rem;
   }
 }
