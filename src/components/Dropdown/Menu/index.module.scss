@@ -1,0 +1,35 @@
+@use "@/styles/base/colors" as *;
+
+menu.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: $neutral_700;
+  margin-top: 0.5rem;
+  border: {
+    radius: 0.5em;
+    width: 0.1rem;
+    style: solid;
+    color: $neutral_600;
+  }
+  width: max-content;
+  padding: {
+    inline: 0.4rem;
+    block: 0.3rem;
+  }
+  list-style: none;
+  transition:
+    max-height 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &:not([hidden]) {
+    visibility: visible;
+  }
+}

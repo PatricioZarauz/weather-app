@@ -1,0 +1,53 @@
+@use "@/styles/base/colors" as *;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dropdown-container {
+  position: relative;
+  height: fit-content;
+}
+
+button.dropdown-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $neutral_0;
+  background-color: $neutral_600;
+  padding: {
+    inline: 0.75rem;
+    block: 0.5rem;
+  }
+  border: {
+    radius: 0.5em;
+    width: 0;
+  }
+
+  img.dropdown-icon {
+    animation: rotate 2.5s linear infinite paused;
+  }
+
+  &:hover {
+    img.dropdown-icon {
+      animation-play-state: running;
+    }
+  }
+
+  img.dropdown-arrow {
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &[aria-expanded="true"] > img.dropdown-arrow {
+    transform: rotate(180deg);
+  }
+  &:focus-visible {
+    outline: 0.1em solid $neutral_0;
+    outline-offset: 0.12em;
+  }
+}
