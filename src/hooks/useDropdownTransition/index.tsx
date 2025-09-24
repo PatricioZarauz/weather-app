@@ -13,7 +13,8 @@ const useDropdownTransition = (isOpen: boolean) => {
         const marginTop = parseFloat(
           getComputedStyle(menuRef.current).marginTop,
         )
-        const newHeight = scrollHeight + borderWidth + marginTop
+        const gapHeight = parseFloat(getComputedStyle(menuRef.current).gap)
+        const newHeight = scrollHeight + borderWidth + marginTop + gapHeight
 
         // Set the inline style for the transition to work
         menuRef.current.style.maxHeight = `${newHeight}px`
