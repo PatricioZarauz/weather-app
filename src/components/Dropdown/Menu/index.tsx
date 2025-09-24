@@ -1,3 +1,4 @@
+import MenuItem from "../MenuItem"
 import styles from "./index.module.scss"
 import useDropdownTransition from "@/hooks/useDropdownTransition"
 
@@ -16,21 +17,20 @@ const Menu = ({ isOpen }: DropdownProps) => {
       ref={menuRef}
       hidden={!isOpen}
     >
-      <li role="none">
-        <a href="#" role="menuitem">
-          First Item
-        </a>
-      </li>
-      <li role="none">
-        <a href="#" role="menuitem">
-          Second Item
-        </a>
-      </li>
-      <li role="none">
-        <a href="#" role="menuitem">
-          Third Item
-        </a>
-      </li>
+      <MenuItem
+        label="Celsius (C)"
+        itemKey="celsius"
+        onClick={() => {
+          console.log("Celsius")
+        }}
+      />
+      <MenuItem
+        label="Fahrenheit (F)"
+        itemKey="fahrenheit"
+        onClick={() => {
+          console.log("Fahrenheit")
+        }}
+      />
     </menu>
   )
 }
